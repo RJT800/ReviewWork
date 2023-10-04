@@ -55,11 +55,93 @@ namespace HelloDungeon
             }
         }
 
-        public void Run()
+        void GetSumOfArray(int[] array)
+        {
+            int sum = 0;
+            for (int nextIndex = 0; array.Length > nextIndex; nextIndex++)
+            {
+                sum += array[nextIndex];
+            }
+            Console.WriteLine("the sum of the array is " + sum);
+        }
+
+        void ReverseArray(int[] array)
+        {
+            for (int nextnumber = array.Length - 1; nextnumber >= 0; nextnumber--)
+            {
+                Console.WriteLine(array[nextnumber]);
+            }
+        }
+
+        string GetPlayerInput(string question, string choice1, string choice2)
         {
 
 
-            FizzBuzz(78);
+            string input = "";
+
+            //my version
+
+            //while (input != "1" && input != "2")
+            //{
+            //    Console.WriteLine(question);
+            //    Console.WriteLine("1: "+ choice1);
+            //    Console.WriteLine("2: " + choice2);
+            //    Console.Write(">");
+            //    input = Console.ReadLine();
+            //    if (input == "1")
+            //    {
+            //        Console.WriteLine("Your answer is " + choice1);
+            //        return input;
+            //    }
+            //    else if (input == "2")
+            //    {
+            //        Console.WriteLine("Your answer is " + choice2);
+            //        return input;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid Input");
+            //    }
+            //}
+
+            //better version
+
+            while (input != "1" && input != "2")
+            {
+                Console.WriteLine(question);
+                Console.WriteLine("1: " + choice1);
+                Console.WriteLine("2: " + choice2);
+                Console.Write(">");
+                input = Console.ReadLine();
+                if (input != "1" && input != "2")
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            }
+
+
+            return input;
+        }
+
+        public void Run()
+        {
+
+            //this is making new instance of a vehicle, calling the constructor, can be put anywhere
+            Vehicle Bugatti = new Vehicle("Bugatti", "2015", "bugatti", "yellow", 2000f, 0f, 130f, 35f, 4f, 2f, true);
+
+            
+            //int[] dummyarray = new int[5] { 3, 2, 6, 5, 5 };
+            //int[] dummyarray2 = new int[10] { 5, 320, 323, 23294, 2112, 34325, 2323, 222, 234, 112 };
+
+            //ReverseArray(dummyarray);
+            //ReverseArray(dummyarray2);
+
+            //GetSumOfArray(dummyarray);
+            //GetSumOfArray(dummyarray2);
+
+            //GetPlayerInput("do you know the wey?", "yes", "no");
+
+            //FizzBuzz(78);
 
 
 
